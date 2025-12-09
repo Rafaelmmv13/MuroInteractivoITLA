@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import Navegacion from './componentes/Navegacion';
-import Registro from './componentes/Registro';
-import Login from './componentes/Login';
-import CrearPost from './componentes/CrearPost';
-import ListaPosts from './componentes/ListaPosts';
+import Navegacion from './Componentes/Navegacion';
+import Registro from './Componentes/Registro';
+import Login from './Componentes/Login';
+import CrearPost from './Componentes/CrearPost';
+import ListaPosts from './Componentes/ListaPosts';
 import './App.css';
 
 function App() {

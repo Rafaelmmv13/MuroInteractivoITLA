@@ -12,7 +12,6 @@ function Registro({ cerrar }) {
     e.preventDefault();
     
     try {
-      // Verificar si el usuario ya existe
       const q = query(collection(db, 'usuarios'), where('usuario', '==', usuario));
       const querySnapshot = await getDocs(q);
       
@@ -21,7 +20,6 @@ function Registro({ cerrar }) {
         return;
       }
 
-      // Guardar usuario en Firestore
       await addDoc(collection(db, 'usuarios'), {
         usuario: usuario,
         clave: clave,

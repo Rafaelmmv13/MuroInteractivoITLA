@@ -18,7 +18,6 @@ function Login({ cerrar, setUsuario }) {
     setCargando(true);
     
     try {
-      // Buscar el usuario en Firestore
       const q = query(
         collection(db, 'usuarios'), 
         where('usuario', '==', usuarioInput.trim())
@@ -34,14 +33,12 @@ function Login({ cerrar, setUsuario }) {
       
       const userData = querySnapshot.docs[0].data();
       
-      // Verificar la contraseña
       if (userData.clave !== claveInput) {
         alert('Contraseña incorrecta');
         setCargando(false);
         return;
       }
       
-      // Guardar usuario en el estado
       setUsuario({
         id: querySnapshot.docs[0].id,
         usuario: userData.usuario,
